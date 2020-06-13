@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onClick</title>
+	<style>
+		.hide {
+			height: 0px;
+			overflow: hidden;
+		}
+
+	</style>
+</head>
+<body>
+<div class="hide">This is information on the page that will be hidden.</div>
+
+<div class="regularInfo">
+	<a href="#" id="linkClick">Click Here</a>
+</div>
+
+
+<script>
+
+const ALERT = document.querySelector(".hide");
+const LINKCLICK = document.querySelector("#linkClick");
+
+// LINKCLICK.classList.remove("hide");
+// ALERT.classList.add("hide");
+
+function hideShow(e,current) {
+	//LINKCLICK.classList.toggle("hide");
+	e.preventDefault();
+	
+	current.innerHTML == "Click Here" ? LINKCLICK.innerHTML = "Clicked" : LINKCLICK.innerHTML = "Click Here";
+
+	ALERT.classList.toggle("hide");
+} 
+
+LINKCLICK.addEventListener("click", function(e){ hideShow(e,this); }, false);
+
+</script>
+
+</body>
+</html>
